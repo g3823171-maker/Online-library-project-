@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f4f4f4;
+    }
+
+    .button-container {
+      display: grid;
+      grid-template-columns: repeat(2, 200px); /* 2 columns */
+      grid-gap: 20px;
+    }
+
+    .btn {
+      width: 200px;          /* fixed width */
+      height: 60px;          /* fixed height */
+      background: #3498db;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      text-align: center;
+    }
+
+    .btn:hover {
+      background: #2980b9;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <title>Button Layout</title>
+  </head>
+<body>
+  <div class="button-container">
+    <form action="activity.php" method="get">
+      <button class="btn">ACTIVITY</button>
+    </form>
+    <form action="application.php" method="get">
+      <button class="btn">APPLICATION</button>
+    </form>
+    <form action="feedback.php" method="get">
+      <button class="btn">FEEDBACK</button>
+    </form>
+    <form action="loginuser.php" method="get">
+      <button class="btn">LOGINUSER</button>
+    </form>
+    <form action="ncc.php" method="get">
+      <button class="btn">NCC</button>
+    </form>
+    <form action="notification.php" method="get">
+      <button class="btn">NOTIFICATION</button>
+    </form>
+    <form action="nss.php" method="get">
+      <button class="btn">NSS</button>
+    </form>
+    <form action="studentreg.php" method="get">
+      <button class="btn">STUDENTREG</button>
+    </form>
+    <form action="unitapplication.php" method="get">
+      <button class="btn">UNITAPPLICATION</button>
+    </form>
+    <form action="unitevents.php" method="get">
+      <button class="btn">UNITEVENTS</button>
+    </form>
+    <form action="yrc.php" method="get">
+      <button class="btn">YRC</button>
+</div>
+</body>
+</html>

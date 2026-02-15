@@ -1,10 +1,8 @@
-<?php
+<<?php
 include("db.php");
 session_start();
 
-
-
-$stmt=$pdo->query("SELECT * FROM student_registration");
+$stmt=$pdo->query("SELECT * FROM ssl_forum");
 $rows=$stmt->fetchAll(PDO::FETCH_ASSOC);?>
 
 
@@ -107,41 +105,44 @@ th:nth-child(even) {
 </style>
 
 </head><body>
-<h2 align="center">STUDENTREGISTRATION REPORT</h2>
+<h2 align="center">SSL club</h2>
 
 <?php if(!empty($rows)):?>
 
 <table>
 <tr>
+<th>SSL_ID</th>
 <th>STUDENT_ID</th>
-<th>STUDENT_NAME</th>
-<th>GENDER</th>
-<th>DOB</th>
-<th>EMAIL</th>
-<th>MOBILE</th>
-<th>DEPATMENT</th>
-<th>YEAR_OF_STUDY</th>
+<th>NAME</th>
+<th>DEPARTMENT</th>
+<th>YEAR</th>
 <th>ROLL_NO</th>
-<th>ADDRESS</th>
-<th>BLOOD_GROUP</th>
-<th>SKILLSINTERESTED_UNIT</th>
-<th>CREATED_AT</th>
+<th>CONTACT_N0</th>
+<th>EMAIL</th>
+<th>PREFERRED_ACTIVITY</th>
+<th>AREA_OF_INTEREST_IN_SERVICE</th>
+<th>SUGGESTIONS_FOR_SOCIAL_SERVICE_INITIATIVES</th>
+<th>WILLING_TO_VOLUNTEER_REGULARLY</th>
+<th>APPLIED_DATE</th>
+
 </tr>
 
 <?php foreach($rows as $row):?>
 
-<tr><td><?php echo htmlspecialchars($row['student_id']); ?></td>
-<td><?php echo htmlspecialchars($row['student_name']); ?></td>
-<td><?php echo htmlspecialchars($row['dob']); ?></td>
-<td><?php echo htmlspecialchars($row['email']); ?></td>
-<td><?php echo htmlspecialchars($row['mobile']); ?></td>
+<tr><td><?php echo htmlspecialchars($row['ssl_id']); ?></td>
+<td><?php echo htmlspecialchars($row['student_id']); ?></td>
+<td><?php echo htmlspecialchars($row['name']); ?></td>
 <td><?php echo htmlspecialchars($row['department']); ?></td>
-<td><?php echo htmlspecialchars($row['year_of_study']); ?></td>
+<td><?php echo htmlspecialchars($row['year']); ?></td>
 <td><?php echo htmlspecialchars($row['roll_no']); ?></td>
-<td><?php echo htmlspecialchars($row['address']); ?></td>
-<td><?php echo htmlspecialchars($row['blood_group']); ?></td>
-<td><?php echo htmlspecialchars($row['skillsinterested_unit']); ?></td>
-<td><?php echo htmlspecialchars($row['created_at']); ?></td>
+<td><?php echo htmlspecialchars($row['contact_no']); ?></td>
+<td><?php echo htmlspecialchars($row['email']); ?></td>
+<td><?php echo htmlspecialchars($row['preferred_activity']); ?></td>
+<td><?php echo htmlspecialchars($row['area_of_interest_in_service']); ?></td>
+
+<td><?php echo htmlspecialchars($row['suggestions_for_social_service_initiatives']); ?></td>
+<td><?php echo htmlspecialchars($row['willing_to_volunteer_regularly']); ?></td>
+<td><?php echo htmlspecialchars($row['applied_date']); ?></td>
 
 
 </tr>

@@ -3,8 +3,7 @@ include("db.php");
 session_start();
 
 
-
-$stmt=$pdo->query("SELECT * FROM student_registration");
+$stmt=$pdo->query("SELECT * FROM ccc");
 $rows=$stmt->fetchAll(PDO::FETCH_ASSOC);?>
 
 
@@ -107,42 +106,41 @@ th:nth-child(even) {
 </style>
 
 </head><body>
-<h2 align="center">STUDENTREGISTRATION REPORT</h2>
+<h2 align="center">CCC REPORT</h2>
 
 <?php if(!empty($rows)):?>
 
 <table>
 <tr>
+<th>CCC_id</th>
 <th>STUDENT_ID</th>
 <th>STUDENT_NAME</th>
-<th>GENDER</th>
-<th>DOB</th>
+<th>DEPARTMENT</th>
+<th>YEAR</th>
+<th>ROLL_NUMBER</th>
 <th>EMAIL</th>
-<th>MOBILE</th>
-<th>DEPATMENT</th>
-<th>YEAR_OF_STUDY</th>
-<th>ROLL_NO</th>
-<th>ADDRESS</th>
-<th>BLOOD_GROUP</th>
-<th>SKILLSINTERESTED_UNIT</th>
-<th>CREATED_AT</th>
+<th>CONTACT_NUMBER</th>
+<th>TOPIC_OF_INTEREST</th>
+<th>SUGGESTIONS</th>
+<th>WILLING_TO_VOLUNTEER</th>
+<th>APPLIED_DATE</th>
 </tr>
 
 <?php foreach($rows as $row):?>
 
-<tr><td><?php echo htmlspecialchars($row['student_id']); ?></td>
+<tr><td><?php echo htmlspecialchars($row['ccc_id']); ?></td>
+<td><?php echo htmlspecialchars($row['student_id']); ?></td>
 <td><?php echo htmlspecialchars($row['student_name']); ?></td>
-<td><?php echo htmlspecialchars($row['dob']); ?></td>
-<td><?php echo htmlspecialchars($row['email']); ?></td>
-<td><?php echo htmlspecialchars($row['mobile']); ?></td>
 <td><?php echo htmlspecialchars($row['department']); ?></td>
-<td><?php echo htmlspecialchars($row['year_of_study']); ?></td>
-<td><?php echo htmlspecialchars($row['roll_no']); ?></td>
-<td><?php echo htmlspecialchars($row['address']); ?></td>
-<td><?php echo htmlspecialchars($row['blood_group']); ?></td>
-<td><?php echo htmlspecialchars($row['skillsinterested_unit']); ?></td>
-<td><?php echo htmlspecialchars($row['created_at']); ?></td>
+<td><?php echo htmlspecialchars($row['year']); ?></td>
+<td><?php echo htmlspecialchars($row['roll_number']); ?></td>
+<td><?php echo htmlspecialchars($row['email']); ?></td>
+<td><?php echo htmlspecialchars($row['contact_number']); ?></td>
+<td><?php echo htmlspecialchars($row['topic_of_interest']); ?></td>
+<td><?php echo htmlspecialchars($row['suggestions']); ?></td>
+<td><?php echo htmlspecialchars($row['willing_to_volunteer']); ?></td>
 
+<td><?php echo htmlspecialchars($row['applied_date']); ?></td>
 
 </tr>
 <?php endforeach; ?>

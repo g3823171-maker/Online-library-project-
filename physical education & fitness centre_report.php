@@ -2,9 +2,7 @@
 include("db.php");
 session_start();
 
-
-
-$stmt=$pdo->query("SELECT * FROM student_registration");
+$stmt=$pdo->query("SELECT * FROM physical_education_fitness_centre");
 $rows=$stmt->fetchAll(PDO::FETCH_ASSOC);?>
 
 
@@ -107,41 +105,48 @@ th:nth-child(even) {
 </style>
 
 </head><body>
-<h2 align="center">STUDENTREGISTRATION REPORT</h2>
+<h2 align="center">physical education & fitness centre</h2>
 
 <?php if(!empty($rows)):?>
 
 <table>
 <tr>
+<th>SSL_ID</th>
 <th>STUDENT_ID</th>
 <th>STUDENT_NAME</th>
-<th>GENDER</th>
-<th>DOB</th>
-<th>EMAIL</th>
-<th>MOBILE</th>
-<th>DEPATMENT</th>
-<th>YEAR_OF_STUDY</th>
+<th>DEPARTMENT</th>
+<th>YEAR</th>
 <th>ROLL_NO</th>
-<th>ADDRESS</th>
-<th>BLOOD_GROUP</th>
-<th>SKILLSINTERESTED_UNIT</th>
-<th>CREATED_AT</th>
+<th>CONTACT_N0</th>
+<th>EMAIL</th>
+<th>PREFERRED_ACTIVITY</th>
+<th>FITNESS_GOAL</th>
+<th>SKILL_LEVEL</th>
+<th>PREFERRED_TIME_SLOT</th>
+<th>SUGGESTIONS_FOR_FITNESS_CENTRE_IMPROVEMENT</th>
+<th>WILLING_TO_VOLUNTEER_IN_PE_EVENTS</th>
+<th>APPLIED_DATE</th>
+
 </tr>
 
 <?php foreach($rows as $row):?>
 
-<tr><td><?php echo htmlspecialchars($row['student_id']); ?></td>
+<tr><td><?php echo htmlspecialchars($row['ssl_id']); ?></td>
+<td><?php echo htmlspecialchars($row['student_id']); ?></td>
 <td><?php echo htmlspecialchars($row['student_name']); ?></td>
-<td><?php echo htmlspecialchars($row['dob']); ?></td>
-<td><?php echo htmlspecialchars($row['email']); ?></td>
-<td><?php echo htmlspecialchars($row['mobile']); ?></td>
 <td><?php echo htmlspecialchars($row['department']); ?></td>
-<td><?php echo htmlspecialchars($row['year_of_study']); ?></td>
+<td><?php echo htmlspecialchars($row['year']); ?></td>
 <td><?php echo htmlspecialchars($row['roll_no']); ?></td>
-<td><?php echo htmlspecialchars($row['address']); ?></td>
-<td><?php echo htmlspecialchars($row['blood_group']); ?></td>
-<td><?php echo htmlspecialchars($row['skillsinterested_unit']); ?></td>
-<td><?php echo htmlspecialchars($row['created_at']); ?></td>
+<td><?php echo htmlspecialchars($row['contact_no']); ?></td>
+<td><?php echo htmlspecialchars($row['email']); ?></td>
+<td><?php echo htmlspecialchars($row['preferred_activity']); ?></td>
+<td><?php echo htmlspecialchars($row['fitness_goal']); ?></td>
+<td><?php echo htmlspecialchars($row['skill_level']); ?></td>
+<td><?php echo htmlspecialchars($row['preferred_time_slot']); ?></td>
+
+<td><?php echo htmlspecialchars($row['suggestions_for_fitness_centre_improvement']); ?></td>
+<td><?php echo htmlspecialchars($row['willing_to_volunteer_in_pe_events']); ?></td>
+<td><?php echo htmlspecialchars($row['applied_date']); ?></td>
 
 
 </tr>

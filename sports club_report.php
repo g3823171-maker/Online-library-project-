@@ -3,8 +3,7 @@ include("db.php");
 session_start();
 
 
-
-$stmt=$pdo->query("SELECT * FROM student_registration");
+$stmt=$pdo->query("SELECT * FROM sports_club ");
 $rows=$stmt->fetchAll(PDO::FETCH_ASSOC);?>
 
 
@@ -107,41 +106,46 @@ th:nth-child(even) {
 </style>
 
 </head><body>
-<h2 align="center">STUDENTREGISTRATION REPORT</h2>
+<h2 align="center">sports club</h2>
 
 <?php if(!empty($rows)):?>
 
 <table>
 <tr>
+<th>SPRT_ID</th>
 <th>STUDENT_ID</th>
-<th>STUDENT_NAME</th>
-<th>GENDER</th>
-<th>DOB</th>
-<th>EMAIL</th>
-<th>MOBILE</th>
-<th>DEPATMENT</th>
-<th>YEAR_OF_STUDY</th>
+<th>STU_NAME</th>
+<th>DEPARTMENT</th>
+<th>YEAR</th>
 <th>ROLL_NO</th>
-<th>ADDRESS</th>
-<th>BLOOD_GROUP</th>
-<th>SKILLSINTERESTED_UNIT</th>
-<th>CREATED_AT</th>
+<th>CONTACT_N0</th>
+<th>EMAIL</th>
+<th>PREFERRED_SPORT</th>
+<th>SKILL_LEVEL</th>
+<th>INTERESTED_IN</td>
+<th>SUGGESTIONS_FOR_SPORTS_ACTIVITIES</th>
+<th>WILLING_TO_REPRESENT_COLLEGE_IN_CHAMPETITIONS</th>
+<th>APPLIED_DATE</th>
+
 </tr>
 
 <?php foreach($rows as $row):?>
 
-<tr><td><?php echo htmlspecialchars($row['student_id']); ?></td>
-<td><?php echo htmlspecialchars($row['student_name']); ?></td>
-<td><?php echo htmlspecialchars($row['dob']); ?></td>
-<td><?php echo htmlspecialchars($row['email']); ?></td>
-<td><?php echo htmlspecialchars($row['mobile']); ?></td>
+<tr><td><?php echo htmlspecialchars($row['sprt_id']); ?></td>
+<td><?php echo htmlspecialchars($row['student_id']); ?></td>
+<td><?php echo htmlspecialchars($row['stu_name']); ?></td>
 <td><?php echo htmlspecialchars($row['department']); ?></td>
-<td><?php echo htmlspecialchars($row['year_of_study']); ?></td>
+<td><?php echo htmlspecialchars($row['year']); ?></td>
 <td><?php echo htmlspecialchars($row['roll_no']); ?></td>
-<td><?php echo htmlspecialchars($row['address']); ?></td>
-<td><?php echo htmlspecialchars($row['blood_group']); ?></td>
-<td><?php echo htmlspecialchars($row['skillsinterested_unit']); ?></td>
-<td><?php echo htmlspecialchars($row['created_at']); ?></td>
+<td><?php echo htmlspecialchars($row['contact_no']); ?></td>
+<td><?php echo htmlspecialchars($row['email']); ?></td>
+<td><?php echo htmlspecialchars($row['preferred_sport']); ?></td>
+<td><?php echo htmlspecialchars($row['skill_level']); ?></td>
+
+<td><?php echo htmlspecialchars($row['interested_in']); ?></td>
+<td><?php echo htmlspecialchars($row['suggestions_for_sports_activities']); ?></td>
+<td><?php echo htmlspecialchars($row['willing_to_represent_college_in_competitions']); ?></td>
+<td><?php echo htmlspecialchars($row['applied_date']); ?></td>
 
 
 </tr>

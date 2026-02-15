@@ -3,8 +3,7 @@ include("db.php");
 session_start();
 
 
-
-$stmt=$pdo->query("SELECT * FROM student_registration");
+$stmt=$pdo->query("SELECT * FROM gcc");
 $rows=$stmt->fetchAll(PDO::FETCH_ASSOC);?>
 
 
@@ -107,41 +106,43 @@ th:nth-child(even) {
 </style>
 
 </head><body>
-<h2 align="center">STUDENTREGISTRATION REPORT</h2>
+<h2 align="center">GCC REPORT</h2>
 
 <?php if(!empty($rows)):?>
 
 <table>
 <tr>
+<th>GCC_ID</th>
 <th>STUDENT_ID</th>
-<th>STUDENT_NAME</th>
-<th>GENDER</th>
-<th>DOB</th>
-<th>EMAIL</th>
-<th>MOBILE</th>
-<th>DEPATMENT</th>
-<th>YEAR_OF_STUDY</th>
+<th>NAME</th>
+<th>DEPARTMENT</th>
+<th>YEAR</th>
 <th>ROLL_NO</th>
-<th>ADDRESS</th>
-<th>BLOOD_GROUP</th>
-<th>SKILLSINTERESTED_UNIT</th>
-<th>CREATED_AT</th>
+<th>CONTACT_N0</th>
+<th>EMAIL</th>
+<th>GENDER</th>
+<th>INTEREST_AREA</th>
+<th>SUGGESTION_FOR_PROMOTING_GENDER_EQUALITY</th>
+<th>WILLING_TO_VOLUNTEER_AS_GENDER_CHAMPION</th>
+<th>APPLIED_DATE</th>
+
 </tr>
 
 <?php foreach($rows as $row):?>
 
-<tr><td><?php echo htmlspecialchars($row['student_id']); ?></td>
-<td><?php echo htmlspecialchars($row['student_name']); ?></td>
-<td><?php echo htmlspecialchars($row['dob']); ?></td>
-<td><?php echo htmlspecialchars($row['email']); ?></td>
-<td><?php echo htmlspecialchars($row['mobile']); ?></td>
+<tr><td><?php echo htmlspecialchars($row['gcc_id']); ?></td>
+<td><?php echo htmlspecialchars($row['student_id']); ?></td>
+<td><?php echo htmlspecialchars($row['name']); ?></td>
 <td><?php echo htmlspecialchars($row['department']); ?></td>
-<td><?php echo htmlspecialchars($row['year_of_study']); ?></td>
+<td><?php echo htmlspecialchars($row['year']); ?></td>
 <td><?php echo htmlspecialchars($row['roll_no']); ?></td>
-<td><?php echo htmlspecialchars($row['address']); ?></td>
-<td><?php echo htmlspecialchars($row['blood_group']); ?></td>
-<td><?php echo htmlspecialchars($row['skillsinterested_unit']); ?></td>
-<td><?php echo htmlspecialchars($row['created_at']); ?></td>
+<td><?php echo htmlspecialchars($row['contact_no']); ?></td>
+<td><?php echo htmlspecialchars($row['email']); ?></td>
+<td><?php echo htmlspecialchars($row['gender']); ?></td>
+<td><?php echo htmlspecialchars($row['interest_area']); ?></td>
+<td><?php echo htmlspecialchars($row['suggestion_for_promoting_gender_equality']); ?></td>
+<td><?php echo htmlspecialchars($row['willing_to_volunteer_as_gender_champion']); ?></td>
+<td><?php echo htmlspecialchars($row['applied_date']); ?></td>
 
 
 </tr>
